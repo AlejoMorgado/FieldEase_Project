@@ -8,3 +8,7 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+document.getElementById("my-button").addEventListener("click", ()=> {
+  document.getElementById("topContainer").style.visibility = "visible"
+})

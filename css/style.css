@@ -1,18 +1,28 @@
-/*
- * Always set the map height explicitly to define the size of the div element
- * that contains the map.
- */
- #map {
-  height: 50vh;
-  width: 50vw;
-}
-
-/*
- * Optional: Makes the sample page fill the window.
- */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+.topDivs{
+  text-align: center;
+  width: 25%;
+  border-style: solid;
+}
+#topContainer{
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  visibility: hidden;
+}
+#mapContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#map {
+  height: 50vh;
+  width: 50vw;
+  border-radius: 10%;
 }
