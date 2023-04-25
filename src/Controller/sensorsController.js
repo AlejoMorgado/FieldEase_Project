@@ -7,7 +7,7 @@ const getAllSensors = (req,res)=>{
 
 const getoneSensorsData = (req,res)=>{
     res.send(`Get  sensor ${req.params.sensorId}`)
-}
+}   
 
 const createSensorsData = (req,res)=>{
     res.send(`create  sensorData ${req.params.sensorId}`)
@@ -18,7 +18,7 @@ const updateSensorsData = (req,res)=>{
 }
 
 const delateSensorsData = (req,res)=>{
-    res.send(`dalete sensorData ${req.params.sensorId}`)
+    res.send(`delete sensorData ${req.params.sensorId}`)
 }
 
 module.exports = {
