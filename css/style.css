@@ -3,11 +3,21 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
 }
-.topDivs{
-  text-align: center;
-  width: 25%;
-  border-style: solid;
+button{
+ background-color : #fff;
+ border : 2px solid #fff;
+ border-radius : 3px;
+ box-shadow : 0 2px 6px rgba(0,0,0,.3);
+ color : rgb(25,25,25);
+ cursor : pointer;
+ font-family : Roboto,Arial,sans-serif;
+ font-size : 16px;
+ line-height : 38px;
+ margin : 8px 0 22px;
+ padding : 0 5px;
+ text-align : center;
 }
 #topContainer{
   padding: 25px;
@@ -22,7 +32,14 @@ body {
   justify-content: center;
 }
 #map {
-  height: 50vh;
-  width: 50vw;
+  height: 80vh;
+  width: 40vw;
   border-radius: 10%;
+}
+#info{
+  background-color: blueviolet;
+  width: 50px;
+}
+#bluesegment{
+  align-self:flex-end
 }
