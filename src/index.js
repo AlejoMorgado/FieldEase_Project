@@ -17,7 +17,7 @@ app.post('/api/sensorsData', (req, res) => {
     const { period, air_temperature, air_humidity } = req.body;
 
     if (!period || !air_temperature || !air_humidity) {
-        res.status(400).send('Los datos recibidos no son válidos');
+        res.status(400).send('The data is valid');
         return;
     }
 
@@ -29,13 +29,13 @@ app.post('/api/sensorsData', (req, res) => {
             res.status(500).send(error);
             return;
         }
-        console.log(`Datos insertados correctamente: ${period}, ${air_temperature}, ${air_humidity}`);
+        console.log(`Insert the data successfully: ${period}, ${air_temperature}, ${air_humidity}`);
         res.sendStatus(200);
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`);
+    console.log(`Server listening on port ${PORT}`);
 });
 
 // app.get('/api/sensorsData', (req, res) => {
