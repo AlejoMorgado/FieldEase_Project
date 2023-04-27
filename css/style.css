@@ -22,9 +22,10 @@ h1 {
 }
 #map {
   height: 100vh;
-  width: 60vw;
+  width: 50vw;
   border-radius: 20px;
 }
+
 #red-polygon-info {
   width: 30vw;
   background-color: #F6FFDE;
@@ -38,4 +39,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+
 

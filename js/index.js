@@ -1,7 +1,27 @@
 let map;
 let infoWindow;
+let polygonClicked = false;
 
-// Initialize the map
+const showStaticGrahp = () => {
+  document.getElementById("staticGrahp").style.display = "block";
+  document.getElementById("blueZone").style.display = "none";
+  document.getElementById("redZone").style.display = "none";
+};
+
+const showRedPolygonInfo = () => {
+  polygonClicked = true;
+  document.getElementById("redZone").style.display = "block";
+  document.getElementById("blueZone").style.display = "none";
+  document.getElementById("staticGrahp").style.display = "none";
+};
+
+const showBluePolygonInfo = () => {
+  polygonClicked = true;
+  document.getElementById("blueZone").style.display = "block";
+  document.getElementById("redZone").style.display = "none";
+  document.getElementById("staticGrahp").style.display = "none";
+};
+
 const initMap = () => {
   // Set map options
   map = new google.maps.Map(document.getElementById("map"), {
@@ -47,33 +67,25 @@ const initMap = () => {
   redPolygon.setMap(map);
   bluePolygon.setMap(map);
 
-  redPolygon.addListener("click", showRedPolygonInfo,);
-  bluePolygon.addListener("click", showBluePolygonInfo,);
+  window.addEventListener("load", () => {
+    document.getElementById("staticGrahp").style.display = "block";
+    document.getElementById("blueZone").style.display = "none";
+    document.getElementById("redZone").style.display = "none";
+  });
+
+  map.addListener("click", () => {
+    if (!polygonClicked) {
+      document.getElementById("staticGrahp").style.display = "block";
+      document.getElementById("blueZone").style.display = "none";
+      document.getElementById("redZone").style.display = "none";
+    }
+  });
+
+  redPolygon.addListener("click", showRedPolygonInfo);
+  bluePolygon.addListener("click", showBluePolygonInfo);
+  document.getElementById("showStaticGraphBtn").addEventListener("click", showStaticGrahp);
 
   infoWindow = new google.maps.InfoWindow();
-
-}
-
-const redPolygonInfoDiv = document.createElement("div");
-redPolygonInfoDiv.id = 'red-polygon-info';
-graphicsContainer.appendChild(redPolygonInfoDiv);
-
-const bluePolygonInfoDiv = document.createElement("div");
-bluePolygonInfoDiv.id = 'blue-polygon-info';
-graphicsContainer.appendChild(bluePolygonInfoDiv);
-let paragraphRedPolygon = document.createElement("p");
-const showRedPolygonInfo = () => {
-
-  let contentString = "Sector 1 data";
-  paragraphRedPolygon.textContent = contentString;
-  redPolygonInfoDiv.appendChild(paragraphRedPolygon);
-}
-let paragraphBluePolygon = document.createElement("p");
-const showBluePolygonInfo = () => {
-
-  let contentString = "Sector 2 data";
-  paragraphBluePolygon.textContent = contentString;
-  bluePolygonInfoDiv.appendChild(paragraphBluePolygon)
-}
+};
 
 window.initMap = initMap;
