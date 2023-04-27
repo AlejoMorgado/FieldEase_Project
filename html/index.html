@@ -12,21 +12,28 @@
     />
     <!-- CSS FILE -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <!-- JS FILE -->
+    <!-- JS FILES -->
+    <script src="../js/graph.js""></script>
     <script type="module" src="../js/index.js"></script>
+    <!-- LIBRARIES AND APIS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1L2IVj41Eun2CKddssG9pAVMxm8nrzEI&callback=initMap&v=weekly"
+      defer>
+    </script>
   </head>
   <body>
     <div id="topContainer">
       <h1>FieldEase</h1>
     </div>
     <div id="contentContainer">
-      <div id="graphicsContainer"></div>
+      <div id="graphicsContainer">
+        <div class="box">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
       <div id="mapContainer">
         <div id="map"></div>
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1L2IVj41Eun2CKddssG9pAVMxm8nrzEI&callback=initMap&v=weekly"
-          defer
-        ></script>
       </div>
     </div>
   </body>

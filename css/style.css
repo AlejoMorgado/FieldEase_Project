@@ -25,19 +25,17 @@ h1 {
   width: 60vw;
   border-radius: 20px;
 }
-#graphicsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100vh;
-}
 #red-polygon-info {
+  width: 30vw;
+  background-color: #F6FFDE;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #blue-polygon-info {
+  background-color: #C0DBEA;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
