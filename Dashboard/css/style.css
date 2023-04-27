@@ -1,0 +1,44 @@
+h1 {
+  font-size: 40px;
+  color: #224b0c;
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+}
+#topContainer {
+  margin-left: 30px;
+  margin-left: 30px;
+}
+#contentContainer {
+  height: 100vh;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+}
+#mapContainer {
+  align-items: center;
+  justify-content: center;
+}
+#map {
+  height: 100vh;
+  width: 50vw;
+  border-radius: 20px;
+}
+
+#red-polygon-info {
+  width: 30vw;
+  background-color: #F6FFDE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#blue-polygon-info {
+  background-color: #C0DBEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

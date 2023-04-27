@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <!-- SCRIPT TO CREATE POLYNGS WITH MAPS API -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- MANROPE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS FILE -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <!-- JS FILES -->
+    <script src="../js/graph.js""></script>
+    <script type="module" src="../js/index.js"></script>
+    <!-- LIBRARIES AND APIS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1L2IVj41Eun2CKddssG9pAVMxm8nrzEI&callback=initMap&v=weekly"
+      defer>
+    </script>
+  </head>
+  <body>
+    <div id="topContainer">
+      <h1>FieldEase</h1>
+    </div>
+    <div id="contentContainer">
+      <button id="showStaticGraphBtn"">Show Static Graph</button>
+      <div id="graphicsContainer">
+        <div id="staticGrahp">
+          <canvas id="myChart"></canvas>
+          <canvas id="myChart2"></canvas>
+          <canvas id="myChart3"></canvas>
+        </div>
+        <div id="redZone">
+          <canvas id="blueChart1"></canvas>
+          <canvas id="blueChart2"></canvas>
+          <canvas id="blueChart3"></canvas>
+        </div>
+        <div id="blueZone">
+          <canvas id="redChart1"></canvas>
+          <canvas id="redChart2"></canvas>
+          <canvas id="redChart3"></canvas>
+        </div>   
+      </div>
+      <div id="mapContainer">
+        <div id="map"></div>
+      </div>
+    </div>
+  </body>
+</html>
