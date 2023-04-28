@@ -1,28 +1,60 @@
 h1 {
-  font-size: 40px;
   color: #224b0c;
   font-family: "Manrope", sans-serif;
   font-weight: bold;
 }
+h2{
+  font-family: 'DM Sans', sans-serif;
+}
+div h1{
+  margin: 0;
+}div h2{
+  margin: 10px, 0;
+}
 #topContainer {
   margin-left: 30px;
   margin-left: 30px;
+  margin-bottom: 50px;
 }
 #contentContainer {
-  height: 100vh;
-  padding: 10px;
+  height: 80vh;
   align-items: center;
   justify-content: space-evenly;
   display: flex;
   flex-direction: row;
 }
+
+#graphicsContainer{
+  height: 75vh;
+}
+#averageOfSensorH, #averageOfSensorF, #averageOfSensorT, #averageOfSensorF2{
+  padding: 5px;
+  width: 80%;
+  height: 25%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+#averageOfSensorH{
+  background-color: #E3F2C1;
+}
+#averageOfSensorF{
+  background-color: #6C9BCF;
+}
+#averageOfSensorT{
+  background-color: #FFF2CC;
+}
+
 #mapContainer {
   align-items: center;
   justify-content: center;
 }
 #map {
-  height: 100vh;
-  width: 50vw;
+  height: 65vh;
+  width: 40vw;
   border-radius: 20px;
 }
 
@@ -39,6 +71,4 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
-
 
