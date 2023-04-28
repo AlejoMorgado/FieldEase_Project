@@ -1,36 +1,97 @@
+body{
+  background-color: #FEFBED;
+}
 h1 {
-  color: #224b0c;
-  font-family: "Manrope", sans-serif;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
-h2{
-  font-family: 'DM Sans', sans-serif;
+h2 {
+  color: #384E00 ;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
 }
-div h1{
+/* #87b5fa 9.16%, */
+/* #3a98b9 64.72% */
+#showStaticGraphBtn {
+  margin-bottom: 5px;
+  background-image: linear-gradient(
+    92.88deg,
+    #87b5fa 9.16%,
+    #B2CCB5  64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #384E00;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 2rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#showStaticGraphBtn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+
+div > h1 {
   margin: 0;
-}div h2{
-  margin: 10px, 0;
+}
+div > h2 {
+  margin: 0;
+}
+#topContainer > h1 {
+  color: #384E00 ;
+  font-weight: bold;
 }
 #topContainer {
   margin-left: 30px;
   margin-left: 30px;
-  margin-bottom: 50px;
 }
 #contentContainer {
-  height: 80vh;
+  height: 90vh;
   align-items: center;
   justify-content: space-evenly;
   display: flex;
   flex-direction: row;
 }
 
-#graphicsContainer{
+#graphicsContainer {
   height: 75vh;
+  margin: 20px;
 }
-#averageOfSensorH, #averageOfSensorF, #averageOfSensorT, #averageOfSensorF2{
-  padding: 5px;
-  width: 80%;
-  height: 25%;
+#infoGraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#infoGraph >h1{
+  color: #384E00 
+}
+
+#averageOfSensorH,
+#averageOfSensorF,
+#averageOfSensorT,
+#averageOfSensorF2 > h1{
+  color: #3a98b9;
+  font-weight: bold;
+}
+#averageOfSensorH,
+#averageOfSensorF,
+#averageOfSensorT,
+#averageOfSensorF2 {
+  margin-top: 10px;
+  padding: 10px;
+  width: 50%;
+  height: 18%;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -38,37 +99,25 @@ div h1{
   text-align: center;
   border-radius: 20px;
 }
-#averageOfSensorH{
-  background-color: #E3F2C1;
+#averageOfSensorH {
+  background-color: #b2ccb5;
 }
-#averageOfSensorF{
-  background-color: #6C9BCF;
+#averageOfSensorF {
+  background-color: #aec1d7;
 }
-#averageOfSensorT{
-  background-color: #FFF2CC;
+#averageOfSensorT {
+  background-color: #f9e6b7;
 }
 
+#averageOfSensorF2 {
+  background-color: #d6e9b1;
+}
 #mapContainer {
   align-items: center;
   justify-content: center;
 }
 #map {
-  height: 65vh;
+  height: 80vh;
   width: 40vw;
   border-radius: 20px;
 }
-
-#red-polygon-info {
-  width: 30vw;
-  background-color: #F6FFDE;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#blue-polygon-info {
-  background-color: #C0DBEA;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
