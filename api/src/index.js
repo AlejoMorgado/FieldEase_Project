@@ -37,6 +37,20 @@ app.post('/api/sensorsData', (req, res) => {
     });
 });
 
+app.get('/api/sensorsData', (req, res) => {
+    const sql = 'SELECT * FROM sensors'; // Consulta para obtener todos los datos de los sensores
+
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send(error);
+            return;
+        }
+
+        res.json(results); // Devuelve los resultados de la consulta como una respuesta JSON
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
 });

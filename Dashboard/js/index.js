@@ -1,3 +1,5 @@
+
+
 let map;
 let infoWindow;
 let polygonClicked = false;
@@ -48,19 +50,19 @@ const initMap = () => {
 
   const redPolygon = new google.maps.Polygon({
     paths: redPolygonCoords,
-    strokeColor: "#FF0000",
+    strokeColor: "#B9E9FC",
     strokeOpacity: 0.8,
     strokeWeight: 3,
-    fillColor: "#FF0000",
+    fillColor: "#3A98B9",
     fillOpacity: 0.35,
   });
 
   const bluePolygon = new google.maps.Polygon({
     paths: bluePolygonCoords,
-    strokeColor: "blue",
+    strokeColor: "#FFACAC",
     strokeOpacity: 0.8,
     strokeWeight: 5,
-    fillColor: "blue",
+    fillColor: "#FFACAC",
     fillOpacity: 0.35,
   });
 
