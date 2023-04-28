@@ -9,10 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-    <!-- DM Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+  <!-- POPPÍNS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  <!-- DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
   <!-- CSS FILE -->
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <!-- JS FILES -->
@@ -30,30 +34,32 @@
   <div id="topContainer">
     <h1>FieldEase</h1>
   </div>
-  <button id="showStaticGraphBtn"">Show Static Graph</button>
     <div id="contentContainer">
     <div id="graphicsContainer">
       <div id="staticGrahp">
-
-        <div id="averageOfSensorH">
-          <h2>Weekly average of air humidity sensor:</h2>
-          <h1 id="averageHumidity"></h1>
+        <div id="infoGraph">
+          <h1>Weekly summary of your field: </h1>
+          <div id="averageOfSensorH">
+            <h2>Air humidity sensor:</h2>
+            <h1 id="averageHumidity">30</h1>
+          </div>
+  
+          <div id="averageOfSensorF">
+            <h2>Soil moisture sensor 1:</h2>
+            <h1 id="averageFloor1" >45</h1>
+          </div>
+  
+          <div id="averageOfSensorT">
+            <h2>Air temperature sensor:</h2>
+            <h1 id="averageTemperature">400</h1>
+          </div>
+  
+          <div id="averageOfSensorF2">
+            <h2>Soil moisture sensor 2:</h2>
+            <h1 id="averageFloor2">300</h1>
+          </div>
         </div>
-
-        <div id="averageOfSensorF">
-          <h2>Weekly average of soil moisture sensor1:</h2>
-          <h1 id="averageFloor1" ></h1>
-        </div>
-
-        <div id="averageOfSensorT">
-          <h2>Weekly average of air temperature sensor:</h2>
-          <h1 id="averageTemperature">400</h1>
-        </div>
-
-        <div id="averageOfSensorF2">
-          <h2>Weekly average of soil moisture sensor1:</h2>
-          <h1 id="averageFloor2">300</h1>
-        </div>
+ 
 
       </div>
 
@@ -66,10 +72,11 @@
         <canvas id="redChart1"></canvas>
         <canvas id="redChart2"></canvas>
       </div>
-
     </div>
     <div id="mapContainer">
+      <button id="showStaticGraphBtn"">Go back</button>
       <div id="map"></div>
+      
     </div>
     </div>
 </body>

@@ -56,16 +56,49 @@ const initMap = () => {
     fillColor: "#3A98B9",
     fillOpacity: 0.35,
   });
+  // Add mouseover event listener to the redPolygon
+redPolygon.addListener('mouseover', function(event) {
+  // Increase the stroke weight and fill opacity of the polygon
+  redPolygon.setOptions({
+    strokeWeight: 6,
+    fillOpacity: 0.5
+  });
+});
+
+// Add mouseout event listener to the redPolygon to reset its styles
+redPolygon.addListener('mouseout', function(event) {
+  // Reset the stroke weight and fill opacity of the polygon
+  redPolygon.setOptions({
+    strokeWeight: 3,
+    fillOpacity: 0.35
+  });
+});
 
   const bluePolygon = new google.maps.Polygon({
     paths: bluePolygonCoords,
     strokeColor: "#FFACAC",
     strokeOpacity: 0.8,
-    strokeWeight: 5,
+    strokeWeight: 3,
     fillColor: "#FFACAC",
     fillOpacity: 0.35,
   });
+// Add mouseover event listener to the bluePolygon
+bluePolygon.addListener('mouseover', function(event) {
+  // Increase the stroke weight and fill opacity of the polygon
+  bluePolygon.setOptions({
+    strokeWeight: 6,
+    fillOpacity: 0.5
+  });
+});
 
+// Add mouseout event listener to the bluePolygon to reset its styles
+bluePolygon.addListener('mouseout', function(event) {
+  // Reset the stroke weight and fill opacity of the polygon
+  bluePolygon.setOptions({
+    strokeWeight: 3,
+    fillOpacity: 0.35
+  });
+});
   redPolygon.setMap(map);
   bluePolygon.setMap(map);
 
@@ -82,7 +115,6 @@ const initMap = () => {
       document.getElementById("redZone").style.display = "none";
     }
   });
-
   redPolygon.addListener("click", showRedPolygonInfo);
   bluePolygon.addListener("click", showBluePolygonInfo);
   document.getElementById("showStaticGraphBtn").addEventListener("click", showStaticGrahp);
