@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chart.js": "^4.2.1",
+    "jquery": "^3.6.4",
+    "moment-timezone": "^0.5.43",
+    "yarn": "^1.22.19"
+  }
+}
