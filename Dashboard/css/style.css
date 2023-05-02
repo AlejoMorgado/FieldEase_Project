@@ -9,52 +9,96 @@ h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
 }
-/* #87b5fa 9.16%, */
-/* #3a98b9 64.72% */
-#showStaticGraphBtn {
-  margin-bottom: 5px;
-  background-image: linear-gradient(
-    92.88deg,
-    #87b5fa 9.16%,
-    #B2CCB5  64.72%
-  );
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #384E00;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 2rem;
-  padding: 0 1.6rem;
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-  transition: all 0.5s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-#showStaticGraphBtn:hover {
-  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-  transition-duration: 0.1s;
-}
-
 div > h1 {
   margin: 0;
 }
 div > h2 {
   margin: 0;
 }
+/* #87b5fa 9.16%, */
+/* #3a98b9 64.72% */
+#showStaticGraphBtn {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  #showStaticGraphBtn-56:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+  
+  #showStaticGraphBtn:hover:after {
+    transform: translate(0, 0);
+  }
+  
+  #showStaticGraphBtn:active {
+    background-color: #ffdeda;
+    outline: 0;
+  }
+  
+  #showStaticGraphBtn:hover {
+    outline: 0;
+  }
+  
+  @media (min-width: 768px) {
+    #showStaticGraphBtn{
+      padding: 0 40px;
+    }
+  }
+
 #topContainer > h1 {
   color: #384E00 ;
-  font-weight: bold;
 }
-#topContainer {
-  margin-left: 30px;
-  margin-left: 30px;
+#topContainer { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+#title{
+  margin-left: 100px;
+  font-size: 15px;
+}
+#greeting {
+  font-size:larger;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+#greeting > h1{
+  font-weight: bolder;
+}
+#greeting > h2{
+font-weight:300;
+}
+
 #contentContainer {
   height: 90vh;
   align-items: center;
@@ -64,17 +108,25 @@ div > h2 {
 }
 
 #graphicsContainer {
-  height: 75vh;
-  margin: 20px;
+  width: 40%;
 }
 #infoGraph {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
 }
 #infoGraph >h1{
   color: #384E00 
+}
+#redCanvas, #blueCanvas{
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #averageOfSensorH,
@@ -91,7 +143,7 @@ div > h2 {
   margin-top: 10px;
   padding: 10px;
   width: 50%;
-  height: 18%;
+  height: 25%;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -113,11 +165,28 @@ div > h2 {
   background-color: #d6e9b1;
 }
 #mapContainer {
+  width: 60%;
   align-items: center;
   justify-content: center;
+  margin: 20px;
 }
 #map {
-  height: 80vh;
-  width: 40vw;
+  height: 100%;
+  width: 100%;
   border-radius: 20px;
+}
+#zones{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#redChart1, #redChart2, #blueChart1, #blueChart2{
+  height: 50%;
+}
+#greeting, #title{
+  color: #384E00;
+}
+#button{
+  margin-left: 20px;
 }

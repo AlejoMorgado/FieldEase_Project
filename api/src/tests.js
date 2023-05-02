@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 3000;
 
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: '192.168.1.32',
     user: 'root',
-    password: 'santi',
+    password: 'santimorgado12',
     database: 'fieldease'
 });
 
