@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const apiUrl = 'http://192.168.80.24:3000/api/sensorsData'; // Replace with your API endpoint
   const averageH = "averageHumidity"

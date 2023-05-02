@@ -1,5 +1,7 @@
 body{
   background-color: #FEFBED;
+  display: flex;
+  flex-direction: column  ;
 }
 h1 {
   font-family: 'Poppins', sans-serif;
@@ -12,6 +14,7 @@ h2 {
 /* #87b5fa 9.16%, */
 /* #3a98b9 64.72% */
 #showStaticGraphBtn {
+  display: none;
   margin-bottom: 5px;
   background-image: linear-gradient(
     92.88deg,
@@ -52,8 +55,8 @@ div > h2 {
   font-weight: bold;
 }
 #topContainer {
-  margin-left: 30px;
-  margin-left: 30px;
+  margin-left: 190px;
+
 }
 #contentContainer {
   height: 90vh;
@@ -64,19 +67,25 @@ div > h2 {
 }
 
 #graphicsContainer {
-  height: 75vh;
+  width: 65vw;
+  height: 70vh;
   margin: 20px;
 }
 #infoGraph {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 #infoGraph >h1{
   color: #384E00 
 }
-
+#greeting{
+  margin-top: 30px;
+ display: flex;
+ flex-direction: column;
+margin-left: 190px;
+}
 #averageOfSensorH,
 #averageOfSensorF,
 #averageOfSensorT,
@@ -118,6 +127,6 @@ div > h2 {
 }
 #map {
   height: 80vh;
-  width: 40vw;
+  width: 50vw;
   border-radius: 20px;
 }

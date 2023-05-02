@@ -13,6 +13,7 @@ const showStaticGrahp = () => {
 const showRedPolygonInfo = () => {
   polygonClicked = true;
   document.getElementById("redZone").style.display = "block";
+  document.getElementById("showStaticGraphBtn").style.display = "block";
   document.getElementById("blueZone").style.display = "none";
   document.getElementById("staticGrahp").style.display = "none";
 };
@@ -20,6 +21,7 @@ const showRedPolygonInfo = () => {
 const showBluePolygonInfo = () => {
   polygonClicked = true;
   document.getElementById("blueZone").style.display = "block";
+  document.getElementById("showStaticGraphBtn").style.display = "block";
   document.getElementById("redZone").style.display = "none";
   document.getElementById("staticGrahp").style.display = "none";
 };
@@ -110,6 +112,7 @@ bluePolygon.addListener('mouseout', function(event) {
 
   map.addListener("click", () => {
     if (!polygonClicked) {
+      document.getElementById("showStaticGraphBtn").style.display = "block";
       document.getElementById("staticGrahp").style.display = "block";
       document.getElementById("blueZone").style.display = "none";
       document.getElementById("redZone").style.display = "none";
