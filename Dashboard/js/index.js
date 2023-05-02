@@ -26,7 +26,6 @@ const showBluePolygonInfo = () => {
 };
 
 const initMap = () => {
-  // Set map options
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 18,
     center: { lat: 4.569983, lng: -75.684261 },
@@ -57,18 +56,15 @@ const initMap = () => {
     fillColor: "#FFACAC",
     fillOpacity: 0.35,
   });
-  // Add mouseover event listener to the redPolygon
+
 redPolygon.addListener('mouseover', function(event) {
-  // Increase the stroke weight and fill opacity of the polygon
   redPolygon.setOptions({
     strokeWeight: 6,
     fillOpacity: 0.5
   });
 });
 
-// Add mouseout event listener to the redPolygon to reset its styles
 redPolygon.addListener('mouseout', function(event) {
-  // Reset the stroke weight and fill opacity of the polygon
   redPolygon.setOptions({
     strokeWeight: 3,
     fillOpacity: 0.35
@@ -83,18 +79,15 @@ redPolygon.addListener('mouseout', function(event) {
     fillColor: "#3A98B9",
     fillOpacity: 0.35,
   });
-// Add mouseover event listener to the bluePolygon
+
 bluePolygon.addListener('mouseover', function(event) {
-  // Increase the stroke weight and fill opacity of the polygon
   bluePolygon.setOptions({
     strokeWeight: 6,
     fillOpacity: 0.5
   });
 });
 
-// Add mouseout event listener to the bluePolygon to reset its styles
 bluePolygon.addListener('mouseout', function(event) {
-  // Reset the stroke weight and fill opacity of the polygon
   bluePolygon.setOptions({
     strokeWeight: 3,
     fillOpacity: 0.35

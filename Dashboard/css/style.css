@@ -1,102 +1,100 @@
-body{
+body {
   background-color: #FEFBED;
 }
+
 h1 {
   font-family: 'Poppins', sans-serif;
 }
+
 h2 {
-  color: #384E00 ;
+  color: #384E00;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
 }
-div > h1 {
-  margin: 0;
-}
-div > h2 {
-  margin: 0;
-}
-/* #87b5fa 9.16%, */
-/* #3a98b9 64.72% */
-#showStaticGraphBtn {
-    align-items: center;
-    background-color: #fee6e3;
-    border: 2px solid #111;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #111;
-    cursor: pointer;
-    display: flex;
-    font-family: Inter,sans-serif;
-    font-size: 16px;
-    height: 48px;
-    justify-content: center;
-    line-height: 24px;
-    max-width: 100%;
-    padding: 0 25px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  #showStaticGraphBtn-56:after {
-    background-color: #111;
-    border-radius: 8px;
-    content: "";
-    display: block;
-    height: 48px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(8px, 8px);
-    transition: transform .2s ease-out;
-    z-index: -1;
-  }
-  
-  #showStaticGraphBtn:hover:after {
-    transform: translate(0, 0);
-  }
-  
-  #showStaticGraphBtn:active {
-    background-color: #ffdeda;
-    outline: 0;
-  }
-  
-  #showStaticGraphBtn:hover {
-    outline: 0;
-  }
-  
-  @media (min-width: 768px) {
-    #showStaticGraphBtn{
-      padding: 0 40px;
-    }
-  }
 
-#topContainer > h1 {
-  color: #384E00 ;
+div>h1 {
+  margin: 0;
 }
-#topContainer { 
+
+div>h2 {
+  margin: 0;
+}
+
+.divSensors {
+  margin-top: 10px;
+  padding: 10px;
+  width: 50%;
+  height: 25%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.divSensors>h1 {
+  color: #3a98b9;
+  font-weight: bold;
+}
+
+.chartGraph {
+  height: 50%;
+}
+
+#button {
+  margin-left: 20px;
+}
+
+#showStaticGraphBtn {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #aec1d7;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #384E00;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 0 25px;
+}
+
+#topContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-#title{
+
+#topContainer>h1 {
+  color: #384E00;
+}
+
+#greeting,
+#title {
+  color: #384E00;
+}
+
+#title {
   margin-left: 100px;
   font-size: 15px;
 }
+
 #greeting {
-  font-size:larger;
+  font-size: larger;
   margin-top: 50px;
   margin-left: 100px;
 }
-#greeting > h1{
+
+#greeting>h1 {
   font-weight: bolder;
 }
-#greeting > h2{
-font-weight:300;
+
+#greeting>h2 {
+  font-weight: 300;
 }
 
 #contentContainer {
@@ -110,17 +108,20 @@ font-weight:300;
 #graphicsContainer {
   width: 40%;
 }
+
 #infoGraph {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
 
+#infoGraph>h1 {
+  color: #384E00
 }
-#infoGraph >h1{
-  color: #384E00 
-}
-#redCanvas, #blueCanvas{
+
+#redCanvas,
+#blueCanvas {
   padding: 20px;
   height: 100%;
   display: flex;
@@ -129,34 +130,14 @@ font-weight:300;
   justify-content: space-evenly;
 }
 
-#averageOfSensorH,
-#averageOfSensorF,
-#averageOfSensorT,
-#averageOfSensorF2 > h1{
-  color: #3a98b9;
-  font-weight: bold;
-}
-#averageOfSensorH,
-#averageOfSensorF,
-#averageOfSensorT,
-#averageOfSensorF2 {
-  margin-top: 10px;
-  padding: 10px;
-  width: 50%;
-  height: 25%;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border-radius: 20px;
-}
 #averageOfSensorH {
   background-color: #b2ccb5;
 }
+
 #averageOfSensorF {
   background-color: #aec1d7;
 }
+
 #averageOfSensorT {
   background-color: #f9e6b7;
 }
@@ -164,29 +145,22 @@ font-weight:300;
 #averageOfSensorF2 {
   background-color: #d6e9b1;
 }
+
 #mapContainer {
   width: 60%;
   align-items: center;
   justify-content: center;
   margin: 20px;
 }
+
 #map {
   height: 100%;
   width: 100%;
   border-radius: 20px;
 }
-#zones{
+
+#zones {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-#redChart1, #redChart2, #blueChart1, #blueChart2{
-  height: 50%;
-}
-#greeting, #title{
-  color: #384E00;
-}
-#button{
-  margin-left: 20px;
 }

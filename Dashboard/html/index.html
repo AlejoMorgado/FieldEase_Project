@@ -1,95 +1,88 @@
 <html>
 
-<head>
-  <title>Simple Map</title>
-  <!-- SCRIPT TO CREATE POLYNGS WITH MAPS API -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default%22%3E"></script>
-  <!-- MANROPE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <!-- POPPÍNS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
-  <!-- DM Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
-  <!-- CSS FILE -->
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  <!-- JS FILES -->
-  <script src="../js/graph.js"></script>
-  <script type="module" src="../js/index.js"></script>
-  <!-- LIBRARIES AND APIS -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1L2IVj41Eun2CKddssG9pAVMxm8nrzEI&callback=initMap&v=weekly"
-    defer>
-    </script>
-</head>
+  <head>
+    <title>Simple Map</title>
+    <!-- SCRIPT TO CREATE POLYNGS WITH MAPS API -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default%22%3E"></script>
+    <!-- MANROPE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <!-- POPPÍNS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS FILE -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <!-- JS FILES -->
+    <script src="../js/graph.js"></script>
+    <script type="module" src="../js/index.js"></script>
+    <!-- LIBRARIES AND APIS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1L2IVj41Eun2CKddssG9pAVMxm8nrzEI&callback=initMap&v=weekly"
+      defer>
+      </script>
+  </head>
 
-<body>
-  <div id="topContainer">
-    <div id="title">
-      <h1>FieldEase</h1>
+  <body>
+    <div id="topContainer">
+      <div id="title">
+        <h1>FieldEase</h1>
+      </div>
+      <div id="greeting">
+        <h1>Hello You</h1>
+      <h2>Weekly summary of your field: </h2>
+      </div>
     </div>
-    <div id="greeting">
-      <h1>Hello You</h1>
-    <h2>Weekly summary of your field: </h2>
-    </div>
-  </div>
     <div id="contentContainer">
-    <div id="graphicsContainer">
-      <div id="staticGrahp">
-        <div id="infoGraph">
-          <div id="averageOfSensorH">
-            <h2>Air humidity sensor:</h2>
-            <h1 id="averageHumidity">30</h1>
-          </div>
-  
-          <div id="averageOfSensorF">
-            <h2>Soil moisture sensor 1:</h2>
-            <h1 id="averageFloor1" >45</h1>
-          </div>
-  
-          <div id="averageOfSensorT">
-            <h2>Air temperature sensor:</h2>
-            <h1 id="averageTemperature">400</h1>
-          </div>
-  
-          <div id="averageOfSensorF2">
-            <h2>Soil moisture sensor 2:</h2>
-            <h1 id="averageFloor2">300</h1>
+      <div id="graphicsContainer">
+        <div id="staticGrahp">
+          <div id="infoGraph">
+            <div class="divSensors" id="averageOfSensorH">
+              <h2>Air humidity sensor:</h2>
+              <h1 id="averageHumidity">30</h1>
+            </div>
+            <div class="divSensors" id="averageOfSensorF">
+              <h2>Soil moisture sensor 1:</h2>
+              <h1 id="averageFloor1" >45</h1>
+            </div>
+            <div class="divSensors" id="averageOfSensorT">
+              <h2>Air temperature sensor:</h2>
+              <h1 id="averageTemperature">400</h1>
+            </div>
+            <div class="divSensors" id="averageOfSensorF2">
+              <h2>Soil moisture sensor 2:</h2>
+              <h1 id="averageFloor2">300</h1>
+            </div>
           </div>
         </div>
- 
-
+        <div id="zones">
+          <div id="redZone">
+            <div id="redCanvas">
+              <canvas class="chartsGraph" id="redChart1"></canvas>
+              <canvas class="chartGraph" id="redChart2"></canvas>
+            </div>
+          </div>
+          <div id="blueZone">
+            <div id="blueCanvas">
+              <canvas class="chartGraph" id="blueChart1"></canvas>
+              <canvas class="chartGraph" id="blueChart2"></canvas>
+            </div>
+          </div>
+          <div id="button">
+            <button id="showStaticGraphBtn"">Go back</button>
+          </div>
+        </div>
       </div>
-<div id="zones">
-  <div id="redZone">
-    <div id="redCanvas">
-      <canvas id="redChart1"></canvas>
-    <canvas id="redChart2"></canvas>
+      <div id="mapContainer">
+        <div id="map"></div>
+      </div>
     </div>
-  </div>
-  <div id="blueZone">
-    <div id="blueCanvas">
-      <canvas id="blueChart1"></canvas>
-      <canvas id="blueChart2"></canvas>
-    </div>
-  </div>
-  <div id="button">
-    <button id="showStaticGraphBtn"">Go back</button>
-  </div>
-</div>
-</div>
-
-    <div id="mapContainer">
-      <div id="map"></div>
-    </div>
-    </div>
-</body>
-
+  </body>
 </html>

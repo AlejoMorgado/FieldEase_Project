@@ -1,8 +1,8 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const apiUrl = 'http://192.168.80.24:3000/api/updatedData'; 
-  const apiUrlHistoryData = 'http://192.168.80.24:3000/api/data'
+  const apiUrl = 'http://192.168.1.29:3000/api/updatedData'; 
+  const apiUrlHistoryData = 'http://192.168.1.29:3000/api/data'
   const averageH = "averageHumidity"
   const averageF1 = "averageFloor1"
   const averageF2 = "averageFloor2"
@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const floor2 = 'redChart2';
   const chartType = 'line';
 
-  
   const fetchUpdateData = async () => {
     try {
       const response = await fetch(apiUrl);
@@ -42,16 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const avgH = document.getElementById(averageH)
     avgH.textContent = `Promedio de la humedad esta semana:`
     avgH.textContent= ` ${averageAirHumidity}%`
-  
   }
+
   const staticF1 = async () =>{
     const data = await fetchHistoryData();
     const floor1 = data.map(item => item.floor_sensor1);
     const averageFloor1 = Math.round((floor1.reduce((sum, value) => sum + value, 0) / floor1.length) * 100) / 100;
     const avgF1 = document.getElementById(averageF1)
     avgF1.textContent= ` ${averageFloor1}%`
-  
   }
+
   const staticF2 = async () =>{
     const data = await fetchHistoryData();
     const floor2 = data.map(item => item.floor_sensor2);
@@ -59,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const avgF2 = document.getElementById(averageF2)
     avgF2.textContent= ` ${averageFloor2}%`
   }
+
   const staticT = async () =>{
     const data = await fetchHistoryData();
     const airTemperature = data.map(item => item.air_temperature);
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(averageAirTemperature);
     const avgT = document.getElementById(averageT)
     avgT.textContent= ` ${averageAirTemperature}°C`
-  
   }
 
   const temperatureChart = async () => {
@@ -77,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       });
       const airTemperature = data.map(item => item.air_temperature);
-  
       const ctx = document.getElementById(Atemperature).getContext('2d');
       new Chart(ctx, {
         type: chartType,
@@ -121,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     });
     const floor1Data = data.map(item => item.floor_sensor1);
-  
     const ctx = document.getElementById(floor1).getContext('2d');
     new Chart(ctx, {
       type: chartType,
@@ -164,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     });
     const airHumidity = data.map(item => item.air_humidity);
-
     const ctx = document.getElementById(Ahumidity).getContext('2d');
     new Chart(ctx, {
       type: chartType,
@@ -207,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     });
     const floor2Data = data.map(item => item.floor_sensor2);
-
     const ctx = document.getElementById(floor2).getContext('2d');
     new Chart(ctx, {
       type: chartType,
@@ -241,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error:', error);
     }
   }
-
 
   staticH();
   staticF1();
