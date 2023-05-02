@@ -20,7 +20,7 @@ app.post('/api/sensorsData', (req, res) => {
     const { air_temperature, air_humidity, floor_sensor1, floor_sensor2 } = req.body;
 
     if (!air_temperature || !air_humidity || !floor_sensor1 || !floor_sensor2) {
-        res.status(400).send('Los datos recibidos no son válidos');
+        res.status(400).send('Invalid data');
         return;
     }
 
@@ -32,13 +32,13 @@ app.post('/api/sensorsData', (req, res) => {
             res.status(500).send(error);
             return;
         }
-        console.log(`Datos insertados correctamente: ${actual_date}, ${air_temperature}, ${air_humidity}, ${floor_sensor1}, ${floor_sensor2}`);
+        console.log(`Data successfully inserted: ${actual_date}, ${air_temperature}, ${air_humidity}, ${floor_sensor1}, ${floor_sensor2}`);
         res.sendStatus(200);
     });
 });
 
 app.get('/api/sensorsData', (req, res) => {
-    const sql = 'SELECT * FROM sensors'; // Consulta para obtener todos los datos de los sensores
+    const sql = 'SELECT * FROM sensors'; 
 
     connection.query(sql, (error, results, fields) => {
         if (error) {
@@ -47,10 +47,10 @@ app.get('/api/sensorsData', (req, res) => {
             return;
         }
 
-        res.json(results); // Devuelve los resultados de la consulta como una respuesta JSON
+        res.json(results); 
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`);
+    console.log(`Server listening on port ${PORT}`);
 });
