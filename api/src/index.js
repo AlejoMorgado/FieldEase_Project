@@ -37,8 +37,8 @@ app.post('/api/sensorsData', (req, res) => {
     });
 });
 
-app.get('/api/sensorsData', (req, res) => {
-    const sql = 'SELECT * FROM sensors'; 
+app.get('/api/data', (req, res) => {
+    const sql = 'SELECT * FROM sensors';
 
     connection.query(sql, (error, results, fields) => {
         if (error) {
@@ -48,6 +48,20 @@ app.get('/api/sensorsData', (req, res) => {
         }
 
         res.json(results); 
+    });
+});
+
+app.get('/api/updatedData', (req, res) => {
+    const sql = 'SELECT * FROM sensors ORDER BY actual_date DESC  LIMIT 10;'; 
+
+    connection.query(sql, (error, results, fields) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send(error);
+            return;
+        }
+
+        res.json(results); // Devuelve los resultados de la consulta como una respuesta JSON
     });
 });
 
