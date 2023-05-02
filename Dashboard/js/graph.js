@@ -1,7 +1,8 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const apiUrl = 'http://192.168.80.24:3000/api/sensorsData'; // Replace with your API endpoint
+  const apiUrl = 'http://192.168.80.24:3000/api/updatedData'; 
+  const apiUrlHistoryData = 'http://192.168.80.24:3000/api/data'
   const averageH = "averageHumidity"
   const averageF1 = "averageFloor1"
   const averageF2 = "averageFloor2"
@@ -13,43 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const chartType = 'line';
 
   
-
-
-  const staticH = async () =>{
-    const data = await fetchData();
-    const airHumidity = data.map(item => item.air_humidity);
-    const averageAirHumidity = Math.round((airHumidity.reduce((sum, value) => sum + value, 0) / airHumidity.length) * 100) / 100;
-    console.log(averageAirHumidity);
-    const avgH = document.getElementById(averageH)
-    avgH.textContent = `Promedio de la humedad esta semana:`
-    avgH.textContent= ` ${averageAirHumidity}%`
-  
-  }
-  const staticF1 = async () =>{
-    const data = await fetchData();
-    const floor1 = data.map(item => item.floor_sensor1);
-    const averageFloor1 = Math.round((floor1.reduce((sum, value) => sum + value, 0) / floor1.length) * 100) / 100;
-    const avgF1 = document.getElementById(averageF1)
-    avgF1.textContent= ` ${averageFloor1}%`
-  
-  }
-  const staticF2 = async () =>{
-    const data = await fetchData();
-    const floor2 = data.map(item => item.floor_sensor2);
-    const averageFloor2 = Math.round((floor2.reduce((sum, value) => sum + value, 0) / floor2.length) * 100) / 100;
-    const avgF2 = document.getElementById(averageF2)
-    avgF2.textContent= ` ${averageFloor2}%`
-  }
-  const staticT = async () =>{
-    const data = await fetchData();
-    const airTemperature = data.map(item => item.air_temperature);
-    const averageAirTemperature = Math.round((airTemperature.reduce((sum, value) => sum + value, 0) / airTemperature.length) * 100) / 100;
-    console.log(averageAirTemperature);
-    const avgT = document.getElementById(averageT)
-    avgT.textContent= ` ${averageAirTemperature}°C`
-  
-  }
-  async function fetchData() {
+  const fetchUpdateData = async () => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
@@ -59,10 +24,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const  fetchHistoryData = async () => {
+    try {
+      const response = await fetch(apiUrlHistoryData);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  const staticH = async () =>{
+    const data = await fetchHistoryData();
+    const airHumidity = data.map(item => item.air_humidity);
+    const averageAirHumidity = Math.round((airHumidity.reduce((sum, value) => sum + value, 0) / airHumidity.length) * 100) / 100;
+    console.log(averageAirHumidity);
+    const avgH = document.getElementById(averageH)
+    avgH.textContent = `Promedio de la humedad esta semana:`
+    avgH.textContent= ` ${averageAirHumidity}%`
+  
+  }
+  const staticF1 = async () =>{
+    const data = await fetchHistoryData();
+    const floor1 = data.map(item => item.floor_sensor1);
+    const averageFloor1 = Math.round((floor1.reduce((sum, value) => sum + value, 0) / floor1.length) * 100) / 100;
+    const avgF1 = document.getElementById(averageF1)
+    avgF1.textContent= ` ${averageFloor1}%`
+  
+  }
+  const staticF2 = async () =>{
+    const data = await fetchHistoryData();
+    const floor2 = data.map(item => item.floor_sensor2);
+    const averageFloor2 = Math.round((floor2.reduce((sum, value) => sum + value, 0) / floor2.length) * 100) / 100;
+    const avgF2 = document.getElementById(averageF2)
+    avgF2.textContent= ` ${averageFloor2}%`
+  }
+  const staticT = async () =>{
+    const data = await fetchHistoryData();
+    const airTemperature = data.map(item => item.air_temperature);
+    const averageAirTemperature = Math.round((airTemperature.reduce((sum, value) => sum + value, 0) / airTemperature.length) * 100) / 100;
+    console.log(averageAirTemperature);
+    const avgT = document.getElementById(averageT)
+    avgT.textContent= ` ${averageAirTemperature}°C`
+  
+  }
 
   const temperatureChart = async () => {
     try {
-      const data = await fetchData();
+      const data = await fetchUpdateData();
       const labels = data.map(item => {
         const date = new Date(item.actual_date);
         return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -106,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const floor1Chart = async () => {
     try{
-    const data = await fetchData();
+    const data = await fetchUpdateData();
     const labels = data.map(item => {
       const date = new Date(item.actual_date);
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -149,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const humidityChart = async () =>{
     try{
-    const data = await fetchData();
+    const data = await fetchUpdateData();
     const labels = data.map(item => {
       const date = new Date(item.actual_date);
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -192,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const floor2Chart = async () =>{
   try{
-    const data = await fetchData();
+    const data = await fetchUpdateData();
     const labels = data.map(item => {
       const date = new Date(item.actual_date);
       return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });

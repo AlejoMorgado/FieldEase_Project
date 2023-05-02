@@ -32,13 +32,18 @@
 
 <body>
   <div id="topContainer">
-    <h1>FieldEase</h1>
+    <div id="title">
+      <h1>FieldEase</h1>
+    </div>
+    <div id="greeting">
+      <h1>Hello You</h1>
+    <h2>Weekly summary of your field: </h2>
+    </div>
   </div>
     <div id="contentContainer">
     <div id="graphicsContainer">
       <div id="staticGrahp">
         <div id="infoGraph">
-          <h1>Weekly summary of your field: </h1>
           <div id="averageOfSensorH">
             <h2>Air humidity sensor:</h2>
             <h1 id="averageHumidity">30</h1>
@@ -62,21 +67,27 @@
  
 
       </div>
-
-      <div id="redZone">
-        <canvas id="blueChart1"></canvas>
-        <canvas id="blueChart2"></canvas>
-      </div>
-
-      <div id="blueZone">
-        <canvas id="redChart1"></canvas>
-        <canvas id="redChart2"></canvas>
-      </div>
+<div id="zones">
+  <div id="redZone">
+    <div id="redCanvas">
+      <canvas id="redChart1"></canvas>
+    <canvas id="redChart2"></canvas>
     </div>
+  </div>
+  <div id="blueZone">
+    <div id="blueCanvas">
+      <canvas id="blueChart1"></canvas>
+      <canvas id="blueChart2"></canvas>
+    </div>
+  </div>
+  <div id="button">
+    <button id="showStaticGraphBtn"">Go back</button>
+  </div>
+</div>
+</div>
+
     <div id="mapContainer">
-      <button id="showStaticGraphBtn"">Go back</button>
       <div id="map"></div>
-      
     </div>
     </div>
 </body>

@@ -1,11 +1,10 @@
-
-
 let map;
 let infoWindow;
 let polygonClicked = false;
 
 const showStaticGrahp = () => {
   document.getElementById("staticGrahp").style.display = "block";
+  document.getElementById("showStaticGraphBtn").style.display = "none";
   document.getElementById("blueZone").style.display = "none";
   document.getElementById("redZone").style.display = "none";
 };
@@ -13,6 +12,7 @@ const showStaticGrahp = () => {
 const showRedPolygonInfo = () => {
   polygonClicked = true;
   document.getElementById("redZone").style.display = "block";
+  document.getElementById("showStaticGraphBtn").style.display = "block";
   document.getElementById("blueZone").style.display = "none";
   document.getElementById("staticGrahp").style.display = "none";
 };
@@ -20,6 +20,7 @@ const showRedPolygonInfo = () => {
 const showBluePolygonInfo = () => {
   polygonClicked = true;
   document.getElementById("blueZone").style.display = "block";
+  document.getElementById("showStaticGraphBtn").style.display = "block";
   document.getElementById("redZone").style.display = "none";
   document.getElementById("staticGrahp").style.display = "none";
 };
@@ -50,10 +51,10 @@ const initMap = () => {
 
   const redPolygon = new google.maps.Polygon({
     paths: redPolygonCoords,
-    strokeColor: "#B9E9FC",
+    strokeColor: "#FFACAC",
     strokeOpacity: 0.8,
     strokeWeight: 3,
-    fillColor: "#3A98B9",
+    fillColor: "#FFACAC",
     fillOpacity: 0.35,
   });
   // Add mouseover event listener to the redPolygon
@@ -76,10 +77,10 @@ redPolygon.addListener('mouseout', function(event) {
 
   const bluePolygon = new google.maps.Polygon({
     paths: bluePolygonCoords,
-    strokeColor: "#FFACAC",
+    strokeColor: "#B9E9FC", 
     strokeOpacity: 0.8,
     strokeWeight: 3,
-    fillColor: "#FFACAC",
+    fillColor: "#3A98B9",
     fillOpacity: 0.35,
   });
 // Add mouseover event listener to the bluePolygon
@@ -104,6 +105,7 @@ bluePolygon.addListener('mouseout', function(event) {
 
   window.addEventListener("load", () => {
     document.getElementById("staticGrahp").style.display = "block";
+    document.getElementById("showStaticGraphBtn").style.display = "none";
     document.getElementById("blueZone").style.display = "none";
     document.getElementById("redZone").style.display = "none";
   });
