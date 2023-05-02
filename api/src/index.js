@@ -61,7 +61,7 @@ app.get('/api/updatedData', (req, res) => {
             return;
         }
 
-        res.json(results); // Devuelve los resultados de la consulta como una respuesta JSON
+        res.json(results);
     });
 });
 
